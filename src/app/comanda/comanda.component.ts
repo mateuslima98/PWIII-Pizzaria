@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'has-comanda',
@@ -8,9 +8,17 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ComandaComponent implements OnInit {
 
+  FormComanda: FormGroup;
   constructor(public formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.FormComanda = this.formBuilder.group({
+      chopp : this.formBuilder.control(''),
+      pizzas : this.formBuilder.control(''),
+      recheios : this.formBuilder.control(''),
+      pessoas : this.formBuilder.control(''),
+      taxa :this.formBuilder.control('true')
+      });
   }
 
 }
